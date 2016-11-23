@@ -1,0 +1,295 @@
+\documentclass{article}
+	\usepackage{amsmath} %Needed f o r P r e t t y A l i g n s
+	\usepackage{listings} % i n l i n e code
+	\usepackage{algorithm2e} %P sued oc ode
+	\usepackage{float}
+	\begin{document}
+		\title{CS 260 Homework 4}
+		\date{7/22/2016}
+		\author{Jason Gallagher}
+		\maketitle
+		
+		\section*{Problem 4.7}
+		
+		\begin{tabular}{ll}
+			value& Hash Key (value\%7)\\
+			1&1\\
+			8&1\\
+			27&6\\
+			64&1\\
+			125&6\\
+			216&6\\
+			343&0\\
+			\end{tabular}
+		\begin{table}[H]
+			\centering
+			\caption{Initial Table}
+			\begin{tabular}{ll}
+				0& None\\
+				1& None\\
+				2& None\\
+				3& None\\
+				4& None\\
+				5& None\\
+				6& None\\
+				7& None\\
+			\end{tabular}
+		\end{table}
+		
+		\begin{table}[]
+			\centering
+			\caption{Add 1}
+			\begin{tabular}{ll}
+				0& None\\
+				1& 1 -- None\\
+				2& None\\
+				3& None\\
+				4& None\\
+				5& None\\
+				6& None\\
+				7& None\\
+			\end{tabular}
+		\end{table}
+		
+		\begin{table}[]
+			\centering
+			\caption{Add 8}
+			\begin{tabular}{ll}
+				0& None\\
+				1& 1 -- 8 -- None\\
+				2& None\\
+				3& None\\
+				4& None\\
+				5& None\\
+				6& None\\
+				7& None\\
+			\end{tabular}
+		\end{table}
+		
+		\begin{table}[]
+			\centering
+			\caption{Add 27}
+			\begin{tabular}{ll}
+				0& None\\
+				1& 1 -- 8 -- None\\
+				2& None\\
+				3& None\\
+				4& None\\
+				5& None\\
+				6& 27 -- None\\
+				7& None\\
+			\end{tabular}
+		\end{table}
+		
+		\begin{table}[]
+			\centering
+			\caption{Add 64}
+			\begin{tabular}{ll}
+				0& None\\
+				1& 1 -- 8 -- 64 -- None\\
+				2& None\\
+				3& None\\
+				4& None\\
+				5& None\\
+				6& 27 -- None\\
+				7& None\\
+			\end{tabular}
+		\end{table}
+		
+		
+		\begin{table}[]
+			\centering
+			\caption{Add 125}
+			\begin{tabular}{ll}
+				0& None\\
+				1& 1 -- 8 -- 64 -- None\\
+				2& None\\
+				3& None\\
+				4& None\\
+				5& None\\
+				6& 27 -- 125 -- None\\
+				7& None\\
+			\end{tabular}
+		\end{table}
+		
+				\begin{table}[]
+					\centering
+					\caption{Add 216}
+					\begin{tabular}{ll}
+						0& None\\
+						1& 1 -- 8 -- 64 -- None\\
+						2& None\\
+						3& None\\
+						4& None\\
+						5& None\\
+						6& 27 -- 125 -- 216 -- None\\
+						7& None\\
+					\end{tabular}
+				\end{table}
+				
+		\begin{table}[]
+			\centering
+			\caption{Add 343}
+			\begin{tabular}{ll}
+				0& 343 -- None\\
+				1& 27 -- 64 -- None\\
+				2& None\\
+				3& None\\
+				4& None\\
+				5& None\\
+				6& 1 -- 8 -- 125 -- 216 -- None\\
+				7& None\\
+			\end{tabular}
+		\end{table}
+		
+		
+		
+		
+		\section*{Problem 4.8}
+		\begin{tabular}{ll}
+			Value&Hash Key (value\%5)\\
+			23&2\\
+			48&2\\
+			35&1\\
+			4&4\\
+			10&1\\
+		\end{tabular}
+		\begin{table}[H]
+			\centering
+			\caption{Initial Table}
+			\begin{tabular}{ll}
+				0& None\\
+				1& None\\
+				2&None \\
+				3& None\\
+				4& None\\
+				5& None\\
+			\end{tabular}
+		\end{table}
+		
+		\begin{table}[H]
+			\centering
+			\caption{Add 23}
+			\begin{tabular}{ll}
+				0& None\\
+				1& None\\
+				2& None \\
+				3& 23 -- None\\
+				4& None\\
+				5& None\\
+			\end{tabular}
+		\end{table}
+		
+		\begin{table}[H]
+			\centering
+			\caption{Add 48}
+			\begin{tabular}{ll}
+				0& None\\
+				1& None\\
+				2& None \\
+				3& 23 -- 48 -- None\\
+				4& None\\
+				5& None\\
+			\end{tabular}
+		\end{table}
+		
+			\begin{table}[H]
+				\centering
+				\caption{add 35}
+				\begin{tabular}{ll}
+				0& 35 -- None\\
+				1& None\\
+				2& None\\
+				3& 23 -- 48 -- None\\
+				4& None\\
+				5& None\\
+			\end{tabular}
+		\end{table}
+			
+			\begin{table}[H]
+				\centering
+				\caption{Add 4}
+				\begin{tabular}{ll}
+				0& 35 -- None\\
+				1& None\\
+				2&None\\
+				3& 23 -- 48 -- None\\
+				4& 4 -- None\\
+				5& None\\
+			\end{tabular}
+	\end{table}	
+			
+			\begin{table}[H]
+				\centering
+				\caption{Add 10 (Final Table)}
+				\begin{tabular}{ll}
+				0& 35 -- 10 -- None\\
+				1& None\\
+				2& None \\
+				3& 23 -- 48 -- None\\
+				4& 4 -- None\\
+				5& None\\
+			\end{tabular}
+		\end{table}
+		
+		
+		\section*{Problem 4.1}
+		\ A={1,2,3} B={3,4,5}\\
+		\begin{enumerate}
+			\item[a] AuB = {1,2,3,4,5}
+			\item[b] AnB = {3} 
+			\item[c] Difference(A,B) = {1,2,4,5}
+			\item[d] Member(1,A) = true
+			\item[e] Insert(1,A) = {1,2,3}
+			\item[f] Delete(1,A) = {2,3}
+			\item[g] min(A) = {2}
+		\end{enumerate}
+		
+		\section*{Problem 5}
+		\ Following are several hash functions. None of them are very good as hash functions. Explain why they are not good hash functions and give an example showing them working poorly.\\
+		\subsection{Part 1}
+		Hash keys are character strings. The hash function h1(x) computes the length of a string.\\\\
+		This hash function would not be ideal for storing strings as every string with the same size will be given the same hash key. This also means as the hash key becomes larger, the amount of strings that can potentially be given that key increases at the rate of keys = 127\^strLen assuming that the string can be made up of all 127 ascii values. \\ My example below only considers characters a-z so there are 26\^strLen possible character combinations per key
+\\		 
+		 
+		\begin{table}[H]
+			\centering
+			\caption{Problem 5-1}
+			\begin{tabular}{ll}
+				0& None\\
+				1& a -- b -- c -- ... -- z\\
+				2& aa -- ab -- ac -- ... -- az -- ba -- ... -- zz \\
+				3& aaa -- aab -- aac -- ... -- zzz\\
+				4& None\\
+				5& None\\
+				6& None\\
+				7& None\\
+			\end{tabular}
+		\end{table}
+		
+		\subsection{Part 2}
+		\ The function h2(x) computes a random number r with 1 ≤ r ≤ B, where B is the number of buckets. It returns r.\\
+		\ This is another example of a poor hash function. A Hash key is meant to be unique to a value, however, the hash function must return the same key for a value in order to pull the value from the hash map. But, because the value is randomly generated, there is no way of knowing whether the key returned by the hash function will be the same each time the function is called. This means that there is a good chance that when the new key is generated it may be linked to wrong value.\\Ex:\\
+		key = GetHashKey(5)  \#= 1\\
+		Insert(5,key)
+		\begin{table}[H]
+			\centering
+			\caption{Problem 5-2}
+			\begin{tabular}{ll}
+				0& None\\
+				1& 5\\
+				2& None\\
+				3& None\\
+				4& None\\
+				5& None\\
+				6& None\\
+				7& None\\
+			\end{tabular}
+		\end{table}
+		
+		key = GetHashKey(5)  \#= 5\\
+		getValue(5,key) \# Returns None\\
+		
+		
+	\end{document}
+	\end{article}

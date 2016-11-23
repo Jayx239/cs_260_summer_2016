@@ -1,0 +1,173 @@
+\documentclass{article}
+	\usepackage{amsmath} %Needed f o r P r e t t y A l i g n s
+	\usepackage{listings} % i n l i n e code
+	\usepackage{algorithm2e} %P sued oc ode
+
+	\begin{document}
+		\title{CS 260 Homework 2}
+		\date{7/7/2016}
+		\author{Jason Gallagher}
+		\maketitle
+
+		\section{Problem 1.11}
+$
+\begin{array}{cc}
+   g(1)=\{ & 
+    \begin{array}{ccc}
+      n^2 & even &  x\geq 0 \\
+      n^3 &  odd & x\geq 1 \\
+    \end{array}
+\end{array}
+$
+
+$
+\begin{array}{cc}
+   g(2)=\{ & 
+    \begin{array}{cc}
+      n &  0 \leq x \geq 100 \\
+      n^3 &  x\geq 100 \\
+    \end{array}
+\end{array}
+$
+
+$
+\begin{array}{cc}
+   g(3)=\{ & 
+    \begin{array}{cc}
+      n^2 &  x\geq 0 \\
+      n^3 &  x\geq 1 \\
+    \end{array}
+\end{array}
+$
+\\
+		\ Indicate for each distinct pair i and j whether gi(n) is O(gj(n)) and whether gi(n)is Ω(gj(n))\\
+		
+		
+		\begin{lstlisting}
+		
+			g1	g2	g3
+		O(g1)	t	t	f
+		om(g1)	t	t	f
+		
+		O(g2)	t	t	f
+		om(g2)	t	t	f
+		
+		O(g3)	f	f	t
+		om(g3)	f	f	t
+		\end{lstlisting}
+
+		\section{Problem 1.13}
+
+Show that the following statements are true. 
+			\begin{enumerate}
+				\item \begin{align*}17 <= 17n^0	\\for: n=any\end{align*}
+				\item \begin{align*}n(n-1)/2 = (n^2-n)/2   \\(n^2-n)/2 <= 1/2n^2\\	 	n^2-n <= n^2\\when:  n>=0		\end{align*}
+				\item \begin{align*}10n^2 < 10n^3\\	 n^2 <=n^3\\	for: n >= 10\end{align*}
+				\item \begin{align*}
+				1^k+2^k .... + n^k <=O(n^(k+1))\\
+				1^k+2^k .... + n^k <= n^k+1\\
+				1^k+2^k .... + n^k <= n*n^k\\
+				(1/n)^k + (2/n)^k .... n^k-1 <= n^k\\
+				\end{align*}
+			\end{enumerate}
+
+
+
+		\section{Problem 1.16}
+		\begin{enumerate}
+			\item \begin{equation*}\frac{3}2^n \end{equation*}
+			\item \begin{equation*} \frac{1}3^n \end{equation*}
+			\item \begin{equation*} \sqrt{n}log^2(n) \end{equation*}
+			\item \begin{equation*} \frac{n}log(n) \end{equation*}
+			\item \begin{equation*} log^2(n) \end{equation*}
+			\item \begin{equation*} \sqrt{n} \end{equation*}
+			\item \begin{equation*} log(n) \end{equation*}
+			\item \begin{equation*} log(log(n)) \end{equation*}
+			\item \begin{equation*} 17 \end{equation*}
+		\end{enumerate}
+		
+		
+		
+		\section{Problem 1.18}
+
+		\begin{enumerate}
+		\item[A.] \begin{equation*}
+		t(j) = \sum_{0}^{j/2}2^j
+		\end{equation*}
+		
+		\item[B] \begin{equation*}
+			t(j) = O(2^n)
+		\end{equation*}
+	\end{enumerate}
+	
+	
+	
+	
+		\section{Problem 2.9}
+	\	Write a procedure to interchange the elements at positions p and NEXT(p) in a singly linked list. The following procedure was intended to remove all occurrences of element x from list L. Explain why it doesn't always work and suggest a way to repair the procedure so it performs its intended task. 
+
+	\begin{algorithm}
+	\KwData{One elementtype and one list as input}
+	\KwResult{List with element type removed}
+	
+	\begin{tabbing}
+ proced\=ure delete(elementType x, list l) \+ \\
+	  p = position \\
+	  whil\=e p != END(L) do begin \+ \\
+		if RE\=TRIEVE(p,L) = x then \+\\
+			DELETE(p,L); \-\\
+		  p = NEXT(p,L); \- \\
+	 end\- \\
+    end {delete} \\
+\end{tabbing}
+\end{algorithm}
+
+By removing the element from the list, the list is modified and therefore the indexing of the list changes. This is not accounted for when incrementing through all of the positions
+for example:
+\begin{lstlisting}
+
+list =[12,32,13,13,46]
+x = 13
+
+when p = 2:
+	DELETE(p,L)		\# list = [12,32,13,46]	list.len = 4
+	p = next(p,L)	\# p = 3		list[3] = 46	list[2] = 13
+
+\end{lstlisting}
+\ When p is incremented after an element is removed, the following element is skipped. This occurs because the list length is decreased at the same time as the list iterator is being
+incremented.
+	\\\\\ Revised Version
+	\begin{algorithm}
+	\KwData{One elementtype and one list as input}
+	\KwResult{List with element type removed}
+\begin{tabbing}
+ proced\=ure delete(elementType x, list l) \+ \\
+	  p = position \\
+	  whil\=e p != END(L) do begin \+ \\
+		if RE\=TRIEVE(p,L) = x then \+\\
+			DELETE(p,L); \-\\
+		else then\+ \\  
+		p = NEXT(p,L); \-\- \\
+	 end\- \\
+    end {delete} \\
+\end{tabbing}
+\end{algorithm}
+This fix only increments the list iterator if an element is not removed, this ensures no elements are skipped.
+\\\\\\\\\\
+
+
+		\section{Problem 2.11}
+		
+		\ Times each function is hit\\
+		\begin{enumerate}
+			\item[FIRST:] 
+			\begin{equation*}= \frac{n(n+1)}{2}	\end{equation*}
+			\item[NEXT:] \begin{equation*} n+\frac{n(n+1)}{2}+\sum_{1}^{n}n^2\end{equation*}
+						\item[LAST:] \begin{equation*} \end{equation*}
+						\begin{equation*} n+1	\end{equation*}
+		\end{enumerate}
+
+
+
+	\end{document}
+\end{article}

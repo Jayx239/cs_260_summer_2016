@@ -1,0 +1,85 @@
+\documentclass{article}
+	\usepackage{amsmath} %Needed f o r P r e t t y A l i g n s
+	\usepackage{listings} % i n l i n e code
+	\usepackage{algorithm2e} %P sued oc ode
+	\usepackage{graphicx}
+	
+	\begin{document}
+		\title{CS 260 Homework 2}
+		\date{7/7/2016}
+		\author{Jason Gallagher}
+		\maketitle
+
+
+
+	\section{5.5}
+	
+	\includegraphics[width=400pt]{55}
+	
+	
+		\section{5.7}
+		
+		\includegraphics{57}
+	
+	
+		
+		\section{6.1}
+
+	\section{6.2}
+	\ The time taken to complete all tasks will be:
+	\begin{math}
+	\sum_{1}^{N}t_n	\\
+	\end{math}
+	
+		\section{6.4}
+	
+	
+	
+		\section{6.6}
+		This can fail as if a path is found to one node is smaller then the initial path to another node it will chose that path. However, if the second path has a negative arch value from the second node that makes the total path to the desired node smaller than the first path, it will be ignored and the shortest path will be wrong. For Example:\\
+		\includegraphics{66}
+		\\
+		In this figure, if the first path chosen is A-C, the path length will be calculated as 3. Then, when the second path, from A-B-C is calculated, the algorithm will see that the path from A-B is of length 5. The algorithm will then conclude that the shortest path is from A-C. But, this is not true as from B-C the length is -3, making the path from A-B-C length of 2 which is less then the length of path A-C of length 3.
+		\section{6.7}
+		\begin{lstlisting}
+		
+procedure Floyd ( var A: array[1..n, 1..n] of real;
+ C: array[1..n, 1..n] of real );
+{ Floyd computes shortest path matrix
+ A given arc cost matrix C }
+var i, j, k: integer;
+begin for i := 1 to n do 
+	for j := 1 to n do 
+		A[i, j] := C[i, j]; 
+	for i:= 1 to n do 
+		A[i, i] := 0;
+
+	for k:= 1 to n do
+		for i := 1 to n do
+			for j:= 1 to n do
+				if A[i, k] + A[k, j] < A [i, j] then
+					A[i, j] := A[i, k] + A[k, j]
+end; { Floyd }
+
+
+Answer:
+ If no path is negative, that means that A[i,k] \>=0 and
+ that A[i,j] + a[j,k] \>= 0. So even if A[i,j] is \< 0
+ then A[j,k] must be \>= |A[i,j]| making the route have
+ a non-negative value.
+ Because of this any route combination will produce
+ a path with a non-negative path in all cases.
+		\end{lstlisting}
+
+
+
+		\section{6.15}
+		\begin{enumerate}
+			\item E - E has no path's leading to it
+			\item A - A has not paths leading to it
+			\item F,D,B,C - All values can be access through one another
+		\end{enumerate}
+		
+		
+\end{document}
+	\documentclass{article}

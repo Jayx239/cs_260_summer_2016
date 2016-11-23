@@ -1,0 +1,87 @@
+\documentclass{article}
+	\usepackage{amsmath} %Needed f o r P r e t t y A l i g n s
+	\usepackage{listings} % i n l i n e code
+	\usepackage{algorithm2e} %P sued oc ode
+
+	\begin{document}
+		\title{CS 260 Homework 1}
+		\date{6/23/2016}
+		\author{Jason Gallagher}
+		\maketitle
+
+		\section{Header 1}
+			\subsection{Subsection 1}
+				\begin{itemize}
+					\item Bullet 1
+					\item Bullet 2
+					\item Blue
+					\item Red
+					\item Green
+				\end{itemize}
+			\begin{enumerate}
+				\item First sentence
+				\item Second sentence
+				\item Fun
+				\item Sun
+				\item Nun
+			\end{enumerate}
+		\textbf{Bold}
+		\textit{italic}
+
+
+
+	\begin{align}
+			sum&=1^{2+ir}\\
+			f(i)&=\exp {4+21i}\\
+			f(i)&={2043}^{192+121i}
+	\end{align}
+
+
+
+		\ Today I went to work early in the morning. At work I wrote C\# code and committed 2 applications to be run in production. When I finished work, I went home and ate lunch. Thats when I started my lab report.
+
+\ When I started my report, my partner had already added his section. I began working and realized we did not finish the lab. Shortly after I realized I also forgot my charger somewhere. So, I decided to go to the ECE Labs in Bosone and finish the lab and finalize the lab report. I finished the report and submitted at 4:30pm, an entire half hour before it was due!\\
+
+\ This equation Y=mx+b is in a senetence\\\\
+\ Equation using equation command:\\
+\begin{equation}
+	y=mx+B
+\end{equation}
+\\\\
+\ Inline code: \\
+\begin{lstlisting}
+#Palindrome Checker Application
+import palindrome
+import sys
+
+print("Welcome to Palindrome Checker!\nEnter a word. The program will tell you if it is a palindrome.\nTo quit enter a blank line.")
+
+sys.stdout.write("Enter word to check: ")
+userInput = sys.stdin.readline().replace('\n','').replace('\r','')
+while userInput != " " and userInput != "":
+	print("The word is a palindrome: " + str(palindrome.is_palindrome(userInput)))
+	sys.stdout.write("Enter word to check: ")
+	userInput = sys.stdin.readline().replace('\n','').replace('\r','')
+
+
+\end{lstlisting}
+
+
+\ Using Algoritm command
+\begin{algorithm}
+	\KwData{One Integer Array as input}
+	\KwResult{Computed Larges Value in Array}
+int GetLargestValue(int[] A)\\
+\{\\
+	int largest = A[0]\;
+	for(int i=0; i<A.size(); i++)\\
+	\{\\
+		if (A[i] > largest)
+			largest = A[i]\;
+	\{\\
+	
+	return largest\;
+\}	
+\end{algorithm}
+	\end{document}
+\end{article}

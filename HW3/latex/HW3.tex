@@ -1,0 +1,86 @@
+\documentclass{article}
+	\usepackage{amsmath} %Needed f o r P r e t t y A l i g n s
+	\usepackage{listings} % i n l i n e code
+	\usepackage{algorithm2e} %P sued oc ode
+
+	\begin{document}
+		
+	\section{3.1}
+			\begin{enumerate}
+				\item[a]{	D M N J K L}\\
+				
+				\item[b]{A}\\
+				\item[c]{A}\\
+				\item[d]{F G H}\\
+				\item[e]{A B}\\
+				\item[f]{I M N}\\
+				\item[g]{F G H}\\
+				\item[h]{F H}\\
+				\item[i]{1}\\
+				\item[j]{2}\\
+			\end{enumerate}
+		
+		
+		
+	\section{3.2}
+		\begin{enumerate}
+			\item	ABD
+			\item	ABE
+			\item	BEM
+			\item	BEN
+			\item	ACF
+			\item	ACJ
+			\item	ACK
+			\item	ACH
+			\item	CHL
+		\end{enumerate}
+	
+	\section{3.6}
+	\begin{lstlisting}
+						preorder(n)<preorder(m)	inorder(n)<inorder(m)	postorder(n) < postorder(m)
+				n-m				true					true					true
+				m-n				false					false					false
+			n prop anc of m		true					false					false
+			n is prop desc m	false					true					true
+	\end{lstlisting}
+\section{3.20}
+
+\ Suppose characters a, b, c, d, e, f have probabilities .07, .09, .12, .22, .23, .27, respectively. 
+Find an optimal Huffman code and draw the Huffman tree. 
+What is the average code length?
+
+\begin{lstlisting}
+		       0					1 
+	       [00].12  [01].22		      [10].23  [11].27
+	              \		 	      	        /
+	    	    [001]0.07	      		[100].09						
+
+0.27 = 11
+0.23 = 10
+0.22 = 01
+0.12 = 00
+0.09 = 110
+0.07 = 001
+\end{lstlisting}
+
+	\section{Question 5}
+	
+	The minimum height of the tree is: 0 \\
+	The maximum height of the tree is: 
+	\begin{math}
+	log_2(n)\\
+	\end{math}
+
+	
+	
+	\section{Question 6}
+	\ b children, n number nodes\\
+	\begin{math}
+	b=\#children\\
+	n=\#nodes\\
+	height = log_b(n)	\\
+	\end{math}
+	 
+\end{document}
+\documentclass{article}
+

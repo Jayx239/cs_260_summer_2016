@@ -1,0 +1,60 @@
+\documentclass{article}
+	\usepackage{amsmath} %Needed f o r P r e t t y A l i g n s
+	\usepackage{listings} % i n l i n e code
+	\usepackage{algorithm2e} %P sued oc ode
+	\usepackage{graphicx}
+	
+	\begin{document}
+		\title{CS 260 Homework 7}
+		\date{8/22/2016}
+		\author{Jason Gallagher}
+		\maketitle
+		
+		\section{7.1}
+		\begin{lstlisting}
+		graph[vertex1][vertex2] = cost	# initialized to infinity
+		
+		def insert(graph,i,j,value):
+			graph[i][j] = value
+			graph[j][i] = value
+		
+		def remove(graph, i, j)
+			graph[i][j] = float("inf")
+			graph[j][i] = float("inf")
+			
+		\end{lstlisting}
+		\section{7.2}
+		
+		The adjacency list could be stored as a graph where the two verteces are index's and the third value is the cost for that path.
+		
+		\begin{lstlisting}
+			delete(graph,i):
+				graph[i][0] = float("inf")
+			
+		\end{lstlisting}	
+		\section{7.3}
+			\begin{enumerate}
+				\item[A)] F-H F-E F-G E-B D-C D-B B-A
+				\item[B)] C-D F-H E-G A-B B-D E-G F-G D-E
+				\item[C,A)] A-B B-D D-C D-E E-F F-H H-G
+				\item[C,D)] D-C C-A A-B D-E E-F F-H H-G
+				%\item[D,A)] A-B A-C B-D C-D D-E D-F E-F E-G F-H
+				%\item[D,D)] D-C D-B D-E D-F C-A E-G F-H
+			\end{enumerate}
+			
+			\section{9.2}
+				\begin{math}
+a. log_2n^2\\					
+				\end{math}	
+				\begin{math}
+					b. log_2n^3\\
+				\end{math}
+				\begin{math}
+					c. log_2n^6\\
+				\end{math}
+				
+				
+				
+				
+\end{document}
+\documentclass{article}
